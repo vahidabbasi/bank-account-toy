@@ -1,8 +1,6 @@
 How To Run:
 
-Clone the repository and switch to feature-branch
-
-Run the application
+Clone the repository and Run the application
 
 Go to link below to access swagger documentation:
 
