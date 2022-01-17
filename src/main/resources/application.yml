@@ -1,0 +1,34 @@
+server:
+  port: 8082
+  servlet:
+    contextPath: /bank-account-service
+
+#Database stuff
+spring:
+  datasources:
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    tomcat:
+      connectionTestQuery: select 1
+      connectionTimeout: 15000
+      maxLifetime: 900000
+      leakDetectionThreshold: 60000
+      maximumPoolSize: 5
+      poolName: Hikari-as400
+      minimumIdle: 0
+      type: com.zaxxer.hikari.HikariDataSource
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.xml
+
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1

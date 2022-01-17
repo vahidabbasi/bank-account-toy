@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="vahid abbasi" id="2">
+        <createTable tableName="account_transactions">
+            <column autoIncrement="true" name="transaction_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="transaction_reference" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="account_iban" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="DECIMAL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_type" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="account_transactions"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet author="vahid abbasi" id="3">
+        <addForeignKeyConstraint baseColumnNames="account_iban"
+                                 baseTableName="account_transactions"
+                                 constraintName="fk_account_transactions_account_info"
+                                 referencedColumnNames="account_iban"
+                                 referencedTableName="account_info"/>
+    </changeSet>
+
+</databaseChangeLog>

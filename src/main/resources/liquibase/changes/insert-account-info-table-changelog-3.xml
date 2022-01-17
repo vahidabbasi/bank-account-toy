@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="vahid abbasi" id="4">
+        <insert tableName="account_info">
+            <column name="id" valueNumeric="1"/>
+            <column name="account_number" value="123456"/>
+            <column name="account_iban" value="DE123456"/>
+            <column name="account_balance" valueNumeric="100"/>
+            <column name="account_type" value="checking_account"/>
+        </insert>
+    </changeSet>
+    <changeSet author="vahid abbasi" id="5">
+        <insert tableName="account_info">
+            <column name="id" valueNumeric="2"/>
+            <column name="account_number" value="123"/>
+            <column name="account_iban" value="DE123"/>
+            <column name="account_balance" valueNumeric="1000"/>
+            <column name="account_type" value="checking_account"/>
+        </insert>
+    </changeSet>
+    <changeSet author="vahid abbasi" id="6">
+        <insert tableName="account_info">
+            <column name="id" valueNumeric="3"/>
+            <column name="account_number" value="456"/>
+            <column name="account_iban" value="DE456"/>
+            <column name="account_balance" valueNumeric="1000"/>
+            <column name="account_type" value="saving_account"/>
+        </insert>
+    </changeSet>
+    <changeSet author="vahid abbasi" id="7">
+        <insert tableName="account_info">
+            <column name="id" valueNumeric="4"/>
+            <column name="account_number" value="654321"/>
+            <column name="account_iban" value="DE654321"/>
+            <column name="account_balance" valueNumeric="1000"/>
+            <column name="account_type" value="saving_account"/>
+        </insert>
+    </changeSet>
+    <changeSet author="vahid abbasi" id="8">
+        <insert tableName="account_info">
+            <column name="id" valueNumeric="5"/>
+            <column name="account_number" value="654"/>
+            <column name="account_iban" value="DE654"/>
+            <column name="account_balance" valueNumeric="1000"/>
+            <column name="account_type" value="private_loan_account"/>
+        </insert>
+    </changeSet>
+    <changeSet author="vahid abbasi" id="9">
+        <insert tableName="account_info">
+            <column name="id" valueNumeric="6"/>
+            <column name="account_number" value="321"/>
+            <column name="account_iban" value="DE321"/>
+            <column name="account_balance" valueNumeric="1000"/>
+            <column name="account_type" value="private_loan_account"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
